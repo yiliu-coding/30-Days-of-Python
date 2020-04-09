@@ -16,8 +16,9 @@ We're going to be using Moviepy to do the following:
 
 
 
+### Installations 
 
-### [FFmpeg](https://www.ffmpeg.org/download.html) ([Link](https://www.ffmpeg.org/download.html))
+#### [FFmpeg](https://www.ffmpeg.org/download.html) ([Link](https://www.ffmpeg.org/download.html))
 Moviepy and ffmpeg work well together. ffmpeg can do most/all of this on it's own but, as far as this writing, lacks Python bindings. Thus, moviepy is used!
 
 ##### macOS:
@@ -33,7 +34,7 @@ Use the [executable](https://www.ffmpeg.org/download.html)
 
 
 
-### [ImageMagick](https://imagemagick.org/script/download.php) ([Link](https://imagemagick.org/script/download.php))
+#### [ImageMagick](https://imagemagick.org/script/download.php) ([Link](https://imagemagick.org/script/download.php))
 To add text, you must install ImageMagic.
 
 ##### macOS:
@@ -50,8 +51,44 @@ Download [here](https://imagemagick.org/script/download.php)
 Use the [binary or exe](https://imagemagick.org/script/download.php#windows)
 
 
-### [Moviepy](https://zulko.github.io/moviepy/) ([Link](https://zulko.github.io/moviepy/))
+
+### Base Project
+
+
+#### 1. Start project
+We're using pipenv and [Moviepy](https://zulko.github.io/moviepy/) ([Link](https://zulko.github.io/moviepy/))
+
 ```
-pipenv install moviepy
+cd path/to/your/project/folder/
 ```
-This is what we'll use for Day 15.
+
+```
+pipenv install --python 3.8 moviepy
+pipenv shell
+mkdir data
+mkdir data/samples
+mkdir data/samples/inputs
+mkdir data/samples/outputs
+```
+
+
+#### 2. Create `conf.py`
+
+```python
+import os
+
+ABS_PATH = os.path.abspath(__file__)
+BASE_DIR = os.path.dirname(ABS_PATH)
+DATA_DIR = os.path.join(BASE_DIR, "data")
+SAMPLE_DIR = os.path.join(DATA_DIR, "samples")
+SAMPLE_INPUTS = os.path.join(SAMPLE_DIR, "inputs")
+SAMPLE_OUTPUTS = os.path.join(SAMPLE_DIR, 'outputs')
+```
+
+
+#### 3. Download sample audio and video
+
+- [audio.mp3](https://github.com/codingforentrepreneurs/30-Days-of-Python/raw/master/tutorial-reference/Day%2015/data/samples/inputs/audio.mp3)
+- [sample.mp4](https://github.com/codingforentrepreneurs/30-Days-of-Python/raw/master/tutorial-reference/Day%2015/data/samples/inputs/sample.mp4)
+
+Once downloaded, move these files to your project's `data/samples/inputs` directory.
