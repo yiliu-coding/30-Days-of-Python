@@ -1,4 +1,9 @@
 # gunicorn
+# fastapi or flask or aiohttp or sarlette
+# Django
+
+# Model -> View -> Template -> Response
+
 
 def render_template(template_name='index.html', context={}):
     html_str = ""
