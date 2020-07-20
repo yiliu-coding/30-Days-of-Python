@@ -21,7 +21,7 @@ Basic formatting:
 
 `\"`: Allowed Double quote
 
-`{{` or `}}`: Allowed signle curly bracket in formatted strings
+`{{` or `}}`: Allowed single curly bracket in formatted strings
 
 `"your single-line text"`: Wrap a single quote (`'`) or double quote (`"`) around text / numbers to make it a string.
 
